@@ -7,40 +7,20 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SigninComponent {
 
-  email: string = '';
-  password: string = '';
-  errorMessage: string = '';
-
   constructor(private http: HttpClient) {}
 
-  signIn() {
-    let bodyData = {
-      email: this.email,
-      password: this.password
-    };
-
-    this.http.post('http://localhost:3000/signin', bodyData, { responseType: 'text' })
-      .subscribe(
-        (resultData: any) => {
-          console.log(resultData);
-          alert('Sign-in Successful');
-          // Resetting the form after successful sign-in
-          this.email = '';
-          this.password = '';
-        },
-        (error) => {
-          console.error('Error during sign-in:', error);
-
-          if (error.status === 404) {
-            alert('email is not registered');
-          } else if (error.status === 401){
-            alert('pass is incorrect');
-
-          }else {
-            alert('An error occurred during sign-in.');
-          }
+  sendRequest() {
+    this.http.get<any>('https://your-backend-url/jp').subscribe(
+      (response) => {
+        console.log(response); // Log the response for debugging
+        if (response === 'ok') {
+          alert('Successful'); // Display alert if response is 'ok'
         }
-      );
+      },
+      (error) => {
+        console.error('Error:', error); // Log error if request fails
+      }
+    );
   }
 }
 
