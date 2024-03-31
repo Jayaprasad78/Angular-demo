@@ -29,7 +29,7 @@ export class RegisterComponent {
       cpassword: this.cpassword 
     };
 
-    this.http.post('http://localhost:3000/signup', bodyData, { responseType: 'text' })
+    this.http.post('https://angularback1.vercel.app/signup', bodyData, { responseType: 'text' })
     .subscribe(
       (resultData: any) => {
         console.log(resultData);
