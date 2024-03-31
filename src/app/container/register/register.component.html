@@ -1,0 +1,37 @@
+<!-- app.component.html -->
+<form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
+    </div>
+  
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter Email">
+    </div>
+  
+    <div class="form-group">
+      <label for="phone">phone</label>
+      <input type="phone" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter Email">
+    </div>
+
+
+    <div class="form-group">
+      <label for="work">Work</label>
+      <input type="text" [(ngModel)]="work" [ngModelOptions]="{standalone: true}" class="form-control" id="work" placeholder="Enter Work">
+    </div>
+  
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter Password">
+    </div>
+  
+    <div class="form-group">
+      <label for="cpassword">Confirm Password</label>
+      <input type="password" [(ngModel)]="cpassword" [ngModelOptions]="{standalone: true}" class="form-control" id="cpassword" placeholder="Confirm Password">
+    </div>
+  
+
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+  </form>
+  
