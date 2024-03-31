@@ -1,37 +1,9 @@
-<!-- app.component.html -->
-<form>
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
-    </div>
-  
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter Email">
-    </div>
-  
-    <div class="form-group">
-      <label for="phone">phone</label>
-      <input type="phone" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter Email">
-    </div>
-
-
-    <div class="form-group">
-      <label for="work">Work</label>
-      <input type="text" [(ngModel)]="work" [ngModelOptions]="{standalone: true}" class="form-control" id="work" placeholder="Enter Work">
-    </div>
-  
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter Password">
-    </div>
-  
-    <div class="form-group">
-      <label for="cpassword">Confirm Password</label>
-      <input type="password" [(ngModel)]="cpassword" [ngModelOptions]="{standalone: true}" class="form-control" id="cpassword" placeholder="Confirm Password">
-    </div>
-  
-
-    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
-  </form>
-  
+<form (submit)="onSubmit()">
+  <input type="text" [(ngModel)]="name" name="name" placeholder="Name">
+  <input type="email" [(ngModel)]="email" name="email" placeholder="Email">
+  <input type="text" [(ngModel)]="phone" name="phone" placeholder="Phone">
+  <input type="text" [(ngModel)]="work" name="work" placeholder="Work">
+  <input type="password" [(ngModel)]="password" name="password" placeholder="Password">
+  <input type="password" [(ngModel)]="cpassword" name="cpassword" placeholder="Confirm Password">
+  <button type="submit">Register</button>
+</form>
