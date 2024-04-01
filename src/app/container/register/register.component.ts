@@ -12,13 +12,12 @@ export class RegisterComponent {
   constructor(private http: HttpClient) { }
 
   sendRequestToJP() {
-    // Make a request to /jp route
-    this.http.get('https://angularback1.vercel.app/jp').subscribe(
+  this.http.get('https://angularback1.vercel.app/jp').subscribe(
       (response) => {
         console.log(response); // Handle response if needed
       },
-      (error) => {
-        console.error('Error occurred:', error); // Handle error if needed
+      (error: HttpErrorResponse) => {
+        console.error('Error occurred:', error); // Log the error
       }
     );
   }
