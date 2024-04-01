@@ -13,7 +13,7 @@ export class RegisterComponent {
 
   sendRequestToJP() {
     // Make a request to /jp route
-    this.http.get('/jp').subscribe(
+    this.http.get('https://angularback1.vercel.app/jp').subscribe(
       (response) => {
         console.log(response); // Handle response if needed
       },
